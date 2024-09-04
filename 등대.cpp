@@ -14,11 +14,12 @@ int solution(int n, vector<vector<int>> lighthouse) {
     visited = vector<bool>(n+1, false);
 
     // 인접 행렬 생성 
-    for(const auto& row : lighthouse) {
-        // 양방향 그래프이므로 양쪽 노드에 서로를 추가
-        adj[row[0]].push_back(row[1]); 
-        adj[row[1]].push_back(row[0]);
-    }
+    // for(const auto& row : lighthouse) {
+    //     // 양방향 그래프이므로 양쪽 노드에 서로를 추가
+    //     adj[row[0]].push_back(row[1]); 
+    //     adj[row[1]].push_back(row[0]);
+    // }
+    for(const auto& row : lighthouse) adj[row[0]].push_back(row[1]), adj[row[1]].push_back(row[0]);
 
     // 깊이 우선 탐색 
     function<bool(int)> dfs = [&](int node) {
