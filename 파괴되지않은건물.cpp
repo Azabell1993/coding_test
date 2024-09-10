@@ -23,10 +23,10 @@ int solution(vector<vector<int>> board, vector<vector<int>> skill) {
      * 2. (r1, c1)에서 (r2, c2)까지의 영향을 미치는 사각형의 네 꼭지점은
      *  (r1, c1), (r1, c2 + 1), (r2 + 1, c1), (r2 + 1, c2 + 1)이다.
     */
-        impact[r1][c1] += effect;   // 시작 행과 열 인덱스에 effect 값을 더함
-        impact[r1][c2 + 1] -= effect; // 시작 행과 열 인덱스에서 c2 + 1 위치에 effect 값을 뺌
-        impact[r2 + 1][c1] -= effect; // 끝 행 다음 위치와 시작 열 인덱스에 effect 값을 뺌
-        impact[r2 + 1][c2 + 1] += effect; // 끝 행 다음 위치와 끝 열 다음 위치에 effect 값을 더함
+        impact[r1][c1] += effect; 
+        impact[r1][c2 + 1] -= effect;
+        impact[r2 + 1][c1] -= effect;
+        impact[r2 + 1][c2 + 1] += effect;
     }
 
     // 누적합 계산
