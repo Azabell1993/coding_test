@@ -17,12 +17,6 @@ int solution(vector<vector<int>> board, vector<vector<int>> skill) {
         int r1 = s[1], c1 = s[2], r2 = s[3], c2 = s[4], degree = s[5];
         int effect = (type == 1) ? -degree : degree;
 
-    /**
-     * 1. (r1, c1)에서 (r2, c2)까지의 영향을 미친다는 것은
-     *   (r1, c1)에서 (r2, c2)까지의 영향을 미치는 사각형의 네 꼭지점을 찾아야 한다.
-     * 2. (r1, c1)에서 (r2, c2)까지의 영향을 미치는 사각형의 네 꼭지점은
-     *  (r1, c1), (r1, c2 + 1), (r2 + 1, c1), (r2 + 1, c2 + 1)이다.
-    */
         impact[r1][c1] += effect; 
         impact[r1][c2 + 1] -= effect;
         impact[r2 + 1][c1] -= effect;
